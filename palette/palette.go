@@ -85,14 +85,6 @@ func (c BaseColorType) String() string {
 // Farben verwaltet werden kann.
 type ColorList []color.RGBA
 
-// getColor dient der Ermittlung einer Farbe, welche im Array zwischen
-// cl[i] und cl[i+1] liegt. Der Parameter t im Intervall [0,1) wird fuer
-// eine lineare Interpolation zwischen den beiden Farben verwendet.
-//
-//func (cl ColorList) getColor(i int, t float64) color.RGBA {
-//    return cl.getInterpColor(i, t, LinInterpFunc)
-//}
-
 // getInterpColor ist analog zu getColor, aber hier kann die Interpolations-
 // funktion mit dem Parameter fnc bestimmt werden.
 func (cl ColorList) InterpColor(i int, t float64) (col color.RGBA) {
@@ -108,7 +100,7 @@ func (cl ColorList) InterpColor(i int, t float64) (col color.RGBA) {
     return
 }
 
-type ColorFunc func(t float64) color.RGBA
+// type ColorFunc func(t float64) color.RGBA
 
 // -----------------------------------------------------------------------------
 //
